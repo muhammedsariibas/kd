@@ -14,21 +14,21 @@
         </template>
 
         <v-col>
-        <v-app-bar-title class="pl-3 appBar">
-          <v-img
-            style="background-color: transparent"
-            :width="130"
-            cover
-            src="../logos/KD3.png"
-          ></v-img>
-        </v-app-bar-title>
-      </v-col>
+          <v-app-bar-title class="pl-10 pt-10 pb-10 appBar">
+            <v-img
+              style="background-color: transparent"
+              :width="80"
+              cover
+              src="../logos/kdlogo2.png"
+            ></v-img>
+          </v-app-bar-title>
+        </v-col>
         <v-col
           class="divider hidden-md-and-down d-flex flex-wrap justify-space-between"
           cols="12"
-          sm="4"
-          md="4"
-          style="padding: 50px"
+          sm="5"
+          md="5"
+          style="padding: 45px"
         >
           <v-col class="d-flex justify-end" style="padding: 0">
             <v-btn
@@ -50,14 +50,14 @@
             class="hidden-md-and-down text-center text-subtitle-2 cursor"
             style="color: white; padding: 5px"
           >
-            ANASAYFA
+          <NuxtLink class="nuxt-link" to="/">ANASAYFA</NuxtLink>
           </span>
 
           <span
             class="hidden-md-and-down text-center text-subtitle-2 cursor"
             style="color: white; padding: 5px"
           >
-            PROJELERİMİZ
+          <NuxtLink class="nuxt-link" to="/projects">PROJELERİMİZ</NuxtLink>
           </span>
 
           <span
@@ -78,7 +78,8 @@
             class="hidden-md-and-down text-center text-subtitle-2 cursor"
             style="color: white; padding: 5px"
           >
-            İLETİŞİM
+          <NuxtLink class="nuxt-link" to="/contact">İLETİŞİM</NuxtLink>
+            
           </span>
         </v-col>
       </v-app-bar>
@@ -98,14 +99,14 @@
             ><v-list-item
               class="d-flex justify-center cursor"
               style="background-color: transparent"
-              >Anasayfa</v-list-item
+              ><NuxtLink class="nuxt-link" to="/">ANASAYFA</NuxtLink></v-list-item
             ></v-col
           >
           <v-col cols="12" sm="12" md="12"
             ><v-list-item
               class="d-flex justify-center cursor"
               style="background-color: transparent"
-              >Projelerimiz</v-list-item
+              ><NuxtLink class="nuxt-link" to="/projects">PROJELERİMİZ</NuxtLink></v-list-item
             ></v-col
           >
           <v-col cols="12" sm="12" md="12"
@@ -126,7 +127,7 @@
             ><v-list-item
               class="d-flex justify-center cursor"
               style="background-color: transparent"
-              >İletişim</v-list-item
+              ><NuxtLink class="nuxt-link" to="/contact">İLETİŞİM</NuxtLink></v-list-item
             ></v-col
           >
         </v-list>
@@ -134,6 +135,15 @@
 
       <slot />
 
+      <v-btn
+      href="https://api.whatsapp.com/send?phone=905372071748"
+        size="70"
+        icon
+        color="success"
+        style="position: fixed; bottom: 40px; right: 40px; z-index: 100000000;"
+      >
+        <v-icon size="40">mdi-whatsapp</v-icon></v-btn
+      >
       <v-col style="padding: 0">
         <v-footer
           style="background-color: rgb(236, 236, 236)"
@@ -158,12 +168,12 @@
                 <v-divider></v-divider>
                 <v-list-item-content class="d-flex">
                   <v-list-item-title class="text-subtitle-2 cursor"
-                    >Ana sayfa</v-list-item-title
+                    ><NuxtLink style="text-decoration: none; color: black;" to="/">Anasayfa</NuxtLink></v-list-item-title
                   >
                 </v-list-item-content>
                 <v-list-item-content class="d-flex pt-2 cursor">
                   <v-list-item-title class="text-subtitle-2"
-                    >Projelerimiz</v-list-item-title
+                    ><NuxtLink style="text-decoration: none; color: black;" to="/projects">Projelerimiz</NuxtLink></v-list-item-title
                   >
                 </v-list-item-content>
                 <v-list-item-content class="d-flex pt-2 cursor">
@@ -178,7 +188,7 @@
                 </v-list-item-content>
                 <v-list-item-content class="d-flex pt-2 cursor">
                   <v-list-item-title class="text-subtitle-2"
-                    >İletişim</v-list-item-title
+                    ><NuxtLink style="text-decoration: none; color: black;" to="/contact">İletişim</NuxtLink></v-list-item-title
                   >
                 </v-list-item-content>
               </v-list>
@@ -249,7 +259,7 @@ let icons = ref([
 <style>
 @media screen and (max-width: 600px) {
   .divider {
-    display:none;
+    display: none;
   }
 }
 .cursor {
@@ -261,5 +271,10 @@ let icons = ref([
 }
 v-list-item-content {
   padding-top: 18px;
+}
+.nuxt-link{
+  text-decoration: none;
+  color: white;
+ 
 }
 </style>

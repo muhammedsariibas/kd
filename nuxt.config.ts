@@ -12,8 +12,10 @@ export default defineNuxtConfig({
   modules: ['nuxt-icon','nuxt-swiper',  ['@nuxtjs/google-fonts', {
     families: {
       'Lobster': true,
+      'Source Sans 3':true,
+      'Teko':true,
       download: true,
-      inject: true
+      inject: true,
     }
   }]],
   build: {
