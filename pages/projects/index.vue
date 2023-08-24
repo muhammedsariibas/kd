@@ -18,7 +18,7 @@
         <v-col class="d-flex justify-center">
           <v-col cols="12" sm="7" md="7" class="d-flex justify-center"
             ><v-card-text id="content" style="color: white"
-              ><span style="font-family: 'Teko', sans-serif; color: white">
+              ><span style="font-family: 'Teko', sans-serif; color: white; ">
                 Alanında birikimli ekibimiz, sektör genelinde edindiğimiz zengin
                 deneyimlerimizle birleşerek, her ölçekteki proje ve talebinize
                 etkili çözümler sunuyor. Projelerinizin gereksinimlerini
@@ -229,7 +229,7 @@ let Kutahya = [
   }
   #content {
     animation: slide-in-right 2s ease-in-out;
-    font-size: 20px;
+    font-size: 30px;
   }
   #emptyCol {
     height: 190px;
