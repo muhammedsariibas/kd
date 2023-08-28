@@ -1,7 +1,7 @@
 <template>
   <v-col cols="12" sm="12" md="12" style="padding: 0" class="d-flex flex-wrap">
     <v-col id="contactHeader" cols="12" sm="12" style="padding: 0;">
-      <v-img cover src="../assets/contact.jpg">
+      <v-img cover src="/contact.jpg">
         <v-col style="height: 100%" class="d-flex justify-start align-end"
           ><v-card-title style="color: white"
             ><span

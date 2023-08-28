@@ -56,7 +56,7 @@
       </v-carousel-item>
       <v-carousel-item
         class="d-flex justify-center align-center"
-        src="../assets/cubes.jpg"
+        src="/cubes.jpg"
         cover
       >
         <v-col style="height: 100vh" class="d-flex flex-wrap align-center">
@@ -72,7 +72,7 @@
       </v-carousel-item>
       <v-carousel-item
         class="d-flex justify-center align-center"
-        src="../assets/inovasion.png"
+        src="/inovasion.png"
         cover
       >
         <v-col style="height: 100vh" class="d-flex flex-wrap align-center">
@@ -88,7 +88,7 @@
       </v-carousel-item>
       <v-carousel-item
         class="d-flex justify-center align-center"
-        src="../assets/workmanship.jpg"
+        src="/workmanship.jpg"
         cover
       >
         <v-col style="height: 100vh" class="d-flex flex-wrap align-center">
