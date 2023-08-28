@@ -54,21 +54,56 @@
           </video>
         </v-col>
       </v-carousel-item>
-      <v-carousel-item class="d-flex justify-center align-center"  src="../kdPhotos/inovasion.png" cover> 
-        <v-col style="height: 100vh;" class="d-flex flex-wrap align-center ">
+      <v-carousel-item
+        class="d-flex justify-center align-center"
+        src="../assets/cubes.jpg"
+        cover
+      >
+        <v-col style="height: 100vh" class="d-flex flex-wrap align-center">
           <v-col cols="12" sm="2" md="2"></v-col>
           <v-col cols="12" sm="8" md="8">
-          <span id="inovasion" class="d-flex flex-wrap" >İNOVASYON</span>
-          <span id="inovasionContent"  class="d-flex flex-wrap" >Sıra Dışı Tasarımlar, Benzersiz Mekânlar: İnovasyonla Geleceği İnşa Ediyoruz</span>
+            <span id="inovasion" class="d-flex flex-wrap">MÜŞTERİ ODAKLI </span>
+            <span id="inovasionContent" class="d-flex flex-wrap"
+              >Müşterilerimizin ihtiyaçlarını en iyi şekilde karşılamak için
+              çalışıyoruz.</span
+            >
+          </v-col>
         </v-col>
-        </v-col>
-       
       </v-carousel-item>
-
       <v-carousel-item
-        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+        class="d-flex justify-center align-center"
+        src="../assets/inovasion.png"
         cover
-      ></v-carousel-item>
+      >
+        <v-col style="height: 100vh" class="d-flex flex-wrap align-center">
+          <v-col cols="12" sm="2" md="2"></v-col>
+          <v-col cols="12" sm="8" md="8">
+            <span id="inovasion" class="d-flex flex-wrap">İNOVASYON</span>
+            <span id="inovasionContent" class="d-flex flex-wrap"
+              >Sıra Dışı Tasarımlar, Benzersiz Mekânlar: İnovasyonla Geleceği
+              İnşa Ediyoruz</span
+            >
+          </v-col>
+        </v-col>
+      </v-carousel-item>
+      <v-carousel-item
+        class="d-flex justify-center align-center"
+        src="../assets/workmanship.jpg"
+        cover
+      >
+        <v-col style="height: 100vh" class="d-flex flex-wrap align-center">
+          <v-col cols="12" sm="2" md="2"></v-col>
+          <v-col cols="12" sm="8" md="8">
+            <span id="inovasion" class="d-flex flex-wrap"
+              >KALİTELİ İŞÇİLİK
+            </span>
+            <span id="inovasionContent" class="d-flex flex-wrap"
+              >İşçiliğimizle projeleri kusursuzca hayata geçiriyor, her detaya
+              özen gösteriyoruz.</span
+            >
+          </v-col>
+        </v-col>
+      </v-carousel-item>
     </v-carousel>
     <v-col
       cols="12"
@@ -257,98 +292,169 @@
       md="12"
       class="d-flex flex-wrap align-end"
       style="padding: 0; background-image: linear-gradient(#424242, #e0e0e0)"
+      
     >
-      <v-col style="height: 400px; background-color: transparent"></v-col>
-      <v-col cols="12" sm="4" md="4" class="pb-0 pl-0 pr-0">
-        <v-hover v-slot="{ isHovering, props }">
-          <v-card
-            style="border-radius: 0"
-            color="grey-lighten-4"
-            v-bind="props"
-          >
-            <v-img
-              :aspect-ratio="16 / 9"
-              cover
-              src="https://cdn.vuetifyjs.com/images/cards/kitchen.png"
-            >
-              <v-expand-x-transition>
-                <div
-                  v-if="isHovering"
-                  class="d-flex transition-fast-in-fast-out v-card--reveal-left text-h2"
-                  style="height: 50%"
-                >
-                  null
-                </div>
-              </v-expand-x-transition>
-            </v-img>
-          </v-card>
-        </v-hover>
-        <v-col style="background-color: green; opacity: 0.9; height: 100px"
-          >aasdas</v-col
-        >
+      <v-col
+        cols="12"
+        sm="12"
+        md="12"
+        id="lengthHeight"
+        class="d-flex flex-wrap align-center justify-center"
+      >
+        <h1 class="d-flex justify-center align-item" id="chartjsHeader">
+          Tutkumuz ve Deneyimimizle Başarıyı Şekillendiriyoruz
+        </h1>
       </v-col>
-
       <v-col cols="12" sm="4" md="4" class="pb-0 pl-0 pr-0">
-        <v-hover v-slot="{ isHovering, props }">
-          <v-card
-            style="border-radius: 0"
-            color="grey-lighten-4"
-            v-bind="props"
-          >
-            <v-img
-              :aspect-ratio="16 / 9"
-              cover
-              src="https://cdn.vuetifyjs.com/images/cards/kitchen.png"
-            >
-              <v-expand-transition>
-                <div
-                  v-if="isHovering"
-                  class="d-flex transition-fast-in-fast-out v-card--reveal-middle text-h2"
-                  style="height: 50%"
-                >
-                  null
-                </div>
-              </v-expand-transition>
-            </v-img>
-          </v-card>
-        </v-hover>
-        <v-col style="background-color: green; opacity: 0.9; height: 100px"
-          >aasdas</v-col
-        >
+        <canvas id="successChart"></canvas>
       </v-col>
-
       <v-col cols="12" sm="4" md="4" class="pb-0 pl-0 pr-0">
-        <v-hover v-slot="{ isHovering, props }">
-          <v-card
-            style="border-radius: 0"
-            color="grey-lighten-4"
-            v-bind="props"
-          >
-            <v-img
-              :aspect-ratio="16 / 9"
-              cover
-              src="https://cdn.vuetifyjs.com/images/cards/kitchen.png"
-            >
-              <v-expand-x-transition>
-                <div
-                  v-if="isHovering"
-                  class="d-flex transition-fast-in-fast-out v-card--reveal-right text-h2"
-                  style="height: 50%"
-                >
-                  null
-                </div>
-              </v-expand-x-transition>
-            </v-img>
-          </v-card>
-        </v-hover>
-        <v-col style="background-color: green; opacity: 0.9; height: 100px"
-          >aasdas</v-col
-        >
+        <canvas id="successChart2"></canvas>
       </v-col>
+      <v-col cols="12" sm="4" md="4" class="pb-0 pl-0 pr-0">
+        <canvas id="successChart3"></canvas>
+      </v-col>
+      
     </v-col>
   </v-col>
 </template>
 <script setup>
+import Chart from "chart.js/auto";
+
+const successChart = ref(null);
+
+onMounted(() => {
+  createChart()
+});
+// function onScroll(value){
+//   console.log(value.target.scrollTop)
+// }
+
+
+function createChart() {
+  const x = document.getElementById("successChart");
+  new Chart(x, {
+    type: "doughnut",
+    data: {
+      datasets: [
+        {
+          data: [1],
+          backgroundColor: ["white"],
+        },
+      ],
+    },
+    plugins: [
+      {
+        id: "text",
+        afterDraw: function (chart, a, b) {
+          let width = chart.width,
+            height = chart.height,
+            ctx = chart.ctx;
+
+          ctx.restore();
+          let fontSize = (height / 150).toFixed(2);
+          ctx.font = fontSize + "em sans-serif";
+          
+          ctx.textBaseline = "middle";
+
+          let text = "100%",
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 2;
+          ctx.fillStyle="white";
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        },
+      },
+    ],
+    options: {
+      cutout: 240,
+      radius: 120,
+      events: [],
+    },
+  });
+
+  const two = document.getElementById("successChart2");
+  new Chart(two, {
+    type: "doughnut",
+    data: {
+      datasets: [
+        {
+          data: [1],
+          backgroundColor: ["white"],
+        },
+      ],
+    },
+    plugins: [
+      {
+        id: "text",
+        afterDraw: function (chart, a, b) {
+          let width = chart.width,
+            height = chart.height,
+            ctx = chart.ctx;
+
+          ctx.restore();
+          let fontSize = (height / 150).toFixed(2);
+          ctx.font = fontSize + "em sans-serif";
+          
+          ctx.textBaseline = "middle";
+
+          let text = "100%",
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 2;
+          ctx.fillStyle="white";
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        },
+      },
+    ],
+    options: {
+      cutout: 240,
+      radius: 120,
+      events: [],
+    },
+  });
+
+  const three = document.getElementById("successChart3");
+  new Chart(three, {
+    type: "doughnut",
+    data: {
+      datasets: [
+        {
+          data: [1],
+          backgroundColor: ["white"],
+        },
+      ],
+    },
+    plugins: [
+      {
+        id: "text",
+        afterDraw: function (chart, a, b) {
+          let width = chart.width,
+            height = chart.height,
+            ctx = chart.ctx;
+
+          ctx.restore();
+          let fontSize = (height / 150).toFixed(2);
+          ctx.font = fontSize + "em sans-serif";
+          
+          ctx.textBaseline = "middle";
+
+          let text = "100%",
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 2;
+          ctx.fillStyle="white";
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        },
+      },
+    ],
+    options: {
+      cutout: 240,
+      radius: 120,
+      events: [],
+    },
+  });
+}
 </script>
 
 <style lang="scss">
@@ -414,40 +520,54 @@
   }
 }
 
-
-
 @media screen and (max-width: 600px) {
-  #inovasion{
-  animation: slide-in 2s ease-in-out;
-  z-index: 100000000px; 
-  font-family: 'Teko', sans-serif;
-  color: white;
-  font-size: 40px;
-}
-#inovasionContent{
-  animation: slide-in-right 2s ease-in-out;
-  z-index: 100000000px; 
-  font-family: 'Teko', sans-serif;
-  color: white;
-  font-size: 25px;
-}
-
+  #inovasion {
+    animation: slide-in 2s ease-in-out;
+    z-index: 100000000px;
+    font-family: "Teko", sans-serif;
+    color: white;
+    font-size: 40px;
+  }
+  #inovasionContent {
+    animation: slide-in-right 2s ease-in-out;
+    z-index: 100000000px;
+    font-family: "Teko", sans-serif;
+    color: white;
+    font-size: 25px;
+  }
+  #chartjsHeader {
+    font-family: "Teko", sans-serif;
+    font-size: 20px;
+    color: white;
+  }
+  #lengthHeight {
+    height: 250px;
+    background-color: transparent;
+  }
 }
 @media screen and (min-width: 600px) {
-  #inovasion{
-  animation: slide-in 2s ease-in-out;
-  z-index: 100000000px; 
-  font-family: 'Teko', sans-serif;
-  color: white;
-  font-size: 80px;
-}
-#inovasionContent{
-  animation: slide-in-right 2s ease-in-out;
-  z-index: 100000000px; 
-  font-family: 'Teko', sans-serif;
-  color: white;
-  font-size: 30px;
-}
-
+  #inovasion {
+    animation: slide-in 2s ease-in-out;
+    z-index: 100000000px;
+    font-family: "Teko", sans-serif;
+    color: white;
+    font-size: 80px;
+  }
+  #inovasionContent {
+    animation: slide-in-right 2s ease-in-out;
+    z-index: 100000000px;
+    font-family: "Teko", sans-serif;
+    color: white;
+    font-size: 30px;
+  }
+  #chartjsHeader {
+    font-family: "Teko", sans-serif;
+    font-size: 60px;
+    color: white;
+  }
+  #lengthHeight {
+    height: 400px;
+    background-color: transparent;
+  }
 }
 </style>

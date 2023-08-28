@@ -3,8 +3,8 @@
     <v-col cols="12" md="12" sm="12" style="padding: 0">
       <v-img
         cover
-        lazy-src="../../kdPhotos/projects-main2.jpg"
-        src="../../kdPhotos/projects-main2.jpg"
+        lazy-src="../../assets/projects-main2.jpg"
+        src="../../assets/projects-main2.jpg"
         class="d-flex"
       >
         <v-col id="emptyCol"> </v-col>
@@ -18,7 +18,7 @@
         <v-col class="d-flex justify-center">
           <v-col cols="12" sm="7" md="7" class="d-flex justify-center"
             ><v-card-text id="content" style="color: white"
-              ><span style="font-family: 'Teko', sans-serif; color: white; ">
+              ><span style="font-family: 'Teko', sans-serif; color: white">
                 Alanında birikimli ekibimiz, sektör genelinde edindiğimiz zengin
                 deneyimlerimizle birleşerek, her ölçekteki proje ve talebinize
                 etkili çözümler sunuyor. Projelerinizin gereksinimlerini
@@ -68,7 +68,7 @@
                   scrim="#036358"
                   class="align-center justify-center"
                 >
-                  <v-btn variant="flat">See more info</v-btn>
+                  <v-btn @click="showImage(i.img)" variant="flat">Tıkla</v-btn>
                 </v-overlay>
               </v-card>
             </v-hover>
@@ -101,7 +101,7 @@
                 scrim="#036358"
                 class="align-center justify-center"
               >
-                <v-btn variant="flat">See more info</v-btn>
+                <v-btn @click="showImage(i.img)" variant="flat">Tıkla</v-btn>
               </v-overlay>
             </v-card>
           </v-hover>
@@ -132,59 +132,75 @@
                 scrim="#036358"
                 class="align-center justify-center"
               >
-                <v-btn variant="flat">See more info</v-btn>
+                <v-btn @click="showImage(i.img)" variant="flat">Tıkla</v-btn>
               </v-overlay>
             </v-card>
           </v-hover>
         </v-col>
       </v-col>
     </v-col>
+
+    <v-dialog
+      v-model="dialog"
+      class="d-flex justify-center"
+      style="background-color: rgb(0, 0, 0, 0.9)"
+    >
+      <v-col style="height: 80vh" class="d-flex justify-center">
+        <v-img :src="imageDirectory"></v-img>
+      </v-col>
+    </v-dialog>
   </v-col>
 </template>
 <script setup>
 onMounted(() => {
-  image.value = "../../kdPhotos/projects-main2.jpg";
+  image.value = "../../assets/projects-main2.jpg";
 });
 let image = ref(null);
-
+let imageDirectory = ref(null);
+let dialog = ref(false);
 let Bursa = [
   {
-    img: "../../kdPhotos/bursa-fibabank/IMG_4537.PNG",
+    img: "../../assets/bursa-fibabank/IMG_4537.PNG",
   },
   {
-    img: "../../kdPhotos/bursa-fibabank/IMG_4538.PNG",
+    img: "../../assets/bursa-fibabank/IMG_4538.PNG",
   },
   {
-    img: "../../kdPhotos/bursa-fibabank/IMG_4539.PNG",
+    img: "../../assets/bursa-fibabank/IMG_4539.PNG",
   },
   {
-    img: "../../kdPhotos/bursa-fibabank/IMG_4540.PNG",
+    img: "../../assets/bursa-fibabank/IMG_4540.PNG",
   },
   {
-    img: "../../kdPhotos/bursa-fibabank/IMG_4541.PNG",
+    img: "../../assets/bursa-fibabank/IMG_4541.PNG",
   },
   {
-    img: "../../kdPhotos/bursa-fibabank/IMG_4542.PNG",
+    img: "../../assets/bursa-fibabank/IMG_4542.PNG",
   },
 ];
 
 let Kayseri = [
-  { img: "../../kdPhotos/dhl-kayseri/IMG_4543.PNG" },
-  { img: "../../kdPhotos/dhl-kayseri/IMG_4544.PNG" },
-  { img: "../../kdPhotos/dhl-kayseri/IMG_4545.PNG" },
-  { img: "../../kdPhotos/dhl-kayseri/IMG_4546.PNG" },
-  { img: "../../kdPhotos/dhl-kayseri/IMG_4547.PNG" },
-  { img: "../../kdPhotos/dhl-kayseri/IMG_4548.PNG" },
+  { img: "../../assets/dhl-kayseri/IMG_4543.PNG" },
+  { img: "../../assets/dhl-kayseri/IMG_4544.PNG" },
+  { img: "../../assets/dhl-kayseri/IMG_4545.PNG" },
+  { img: "../../assets/dhl-kayseri/IMG_4546.PNG" },
+  { img: "../../assets/dhl-kayseri/IMG_4547.PNG" },
+  { img: "../../assets/dhl-kayseri/IMG_4548.PNG" },
 ];
 
 let Kutahya = [
-  { img: "../../kdPhotos/garanti-kutahya/IMG_4549.PNG" },
-  { img: "../../kdPhotos/garanti-kutahya/IMG_4550.PNG" },
-  { img: "../../kdPhotos/garanti-kutahya/IMG_4551.PNG" },
-  { img: "../../kdPhotos/garanti-kutahya/IMG_4552.PNG" },
-  { img: "../../kdPhotos/garanti-kutahya/IMG_4553.PNG" },
-  { img: "../../kdPhotos/garanti-kutahya/IMG_4554.PNG" },
+  { img: "../../assets/garanti-kutahya/IMG_4549.PNG" },
+  { img: "../../assets/garanti-kutahya/IMG_4550.PNG" },
+  { img: "../../assets/garanti-kutahya/IMG_4551.PNG" },
+  { img: "../../assets/garanti-kutahya/IMG_4552.PNG" },
+  { img: "../../assets/garanti-kutahya/IMG_4553.PNG" },
+  { img: "../../assets/garanti-kutahya/IMG_4554.PNG" },
 ];
+
+function showImage(img) {
+  imageDirectory.value = img;
+  dialog.value = true;
+}
 </script>
 
 <style>
