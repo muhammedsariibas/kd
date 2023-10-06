@@ -40,17 +40,17 @@
           autoplay="autoplay"
           muted
         >
-          <source src="../videos/kdlogo.mp4" />
+          <source src="../videos/kd-pc.mp4" />
         </video>
 
-        <v-col style="padding: 0; height: 100%; background-color: #a4a4a4">
+        <v-col style="padding: 0; background-color: #a4a4a4">
           <video
             class="hidden-md-and-up"
             style="width: 100%"
             autoplay="autoplay"
             muted
           >
-            <source src="../videos/kdlogo9-16.mp4" />
+            <source src="../videos/kd-phone.mp4" />
           </video>
         </v-col>
       </v-carousel-item>
@@ -160,7 +160,7 @@
             :elevation="isHovering ? 16 : 8"
             :class="{ 'on-hover': isHovering }"
             v-bind="props"
-            style="width: 100%; border-radius: 0; height: 460px"
+            style="width: 100%; border-radius: 0; height: 400px"
           >
             <v-card-title class="d-flex justify-center pt-8"
               ><h2
@@ -173,8 +173,8 @@
                 Projelerimiz
               </h2></v-card-title
             >
-            <v-card-text style="padding-top: 20px">
-              <v-col style="height: 250px"
+            <v-card-text class="d-flex flex-wrap justify-center align-center">
+              <v-col
                 ><v-carousel
                   cycle
                   cover
@@ -182,7 +182,11 @@
                   :show-arrows="false"
                   color="#FFD54F"
                 >
-                  <v-carousel-item cover>
+                  <v-carousel-item
+                    cover
+                    v-for="(i, index) in projectImg"
+                    :key="index"
+                  >
                     <v-col
                       class="d-flex justify-center align-center"
                       style="padding: 0"
@@ -195,40 +199,31 @@
                           font-size: x-large;
                         "
                       >
-                        Bursa Şube
+                        <NuxtLink class="nuxt-link" to="/projects">
+                          <v-btn
+                            variant="text"
+                            class="hidden-md-and-down"
+                            style="
+                              font-family: 'Teko', sans-serif;
+                              font-size: x-large;
+                              color: #383e42;
+                            "
+                          >
+                            DEVAM EDİN
+                          </v-btn>
+                        </NuxtLink>
                       </div>
-                      <v-img
-                        src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-                        style="opacity: 0.5"
-                      ></v-img>
+                      <v-img :src="i.img" style="opacity: 0.5"></v-img>
                     </v-col>
                   </v-carousel-item>
-                  <v-carousel-item cover>
-                    <v-col
-                      class="d-flex justify-center align-center"
-                      style="padding: 0"
-                    >
-                      <div
-                        style="
-                          z-index: 1000000;
-                          position: absolute;
-                          font-family: 'Lobster', sans-serif;
-                        "
-                      >
-                        Bursa Şube
-                      </div>
-                      <v-img
-                        src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-                        style="opacity: 0.5"
-                      ></v-img>
-                    </v-col>
-                  </v-carousel-item> </v-carousel></v-col
+                </v-carousel> </v-col
             ></v-card-text>
             <v-card-actions
               class="d-flex justify-center"
               style="position: absolute; bottom: 10px; left: 10px; right: 10px"
             >
               <v-btn
+                to="projects"
                 class="hidden-md-and-up"
                 style="
                   font-family: 'Teko', sans-serif;
@@ -258,7 +253,7 @@
                   color: #383e42;
                 "
               >
-                Şirketimiz
+                Alanlarımız
               </h2></v-card-title
             >
             <v-card-text style="padding: 40px; height: 278px"
@@ -286,36 +281,105 @@
       </v-col>
     </v-col>
 
+    <v-col cols="12" sm="12" md="12" class="px-0 pb-0">
+      <v-hover v-slot="{ isHovering, props }">
+        <v-card class="rounded-0" color="grey-lighten-4" v-bind="props">
+          <v-img id="hoverSet" :aspect-ratio="16 / 9" cover src="/solar.jpg">
+            <v-expand-transition style="height: 30%">
+              <div
+                v-if="isHovering"
+                class="d-flex transition-fast-in-fast-out bg-success v-card--reveal-solar flex-wrap justify-center"
+                style="height: 100%"
+              >
+                <span
+                  style="font-family: 'Teko', sans-serif; font-size: 30px"
+                  class="d-flex flex-wrap justify-center px-15"
+                >
+                  Çağımızın yeni ihtiyacı olan yenilenebilir enerji (güneş ,
+                  rüzgar enerji sistemleri) konusunda uzman ekibimiz ve
+                  tecrübelerimizle sizlere teknik destek olabiliyor, dilerseniz
+                  ürünleriniz hakkında danışmanlık verebiliyoruz.
+                </span>
+              </div>
+            </v-expand-transition>
+          </v-img>
+        </v-card>
+      </v-hover>
+    </v-col>
+
+    <v-col cols="12" sm="12" md="12" class="px-0 py-0">
+      <v-hover v-slot="{ isHovering, props }">
+        <v-card class="rounded-0" color="grey-lighten-4" v-bind="props">
+          <v-img id="hoverSet" :aspect-ratio="16 / 9" cover src="/solar.jpg">
+            <v-expand-transition style="height: 30%">
+              <div
+                v-if="isHovering"
+                class="d-flex transition-fast-in-fast-out bg-orange-darken-2 v-card--reveal-solar flex-wrap justify-center"
+                style="height: 100%"
+              >
+                <span
+                  style="font-family: 'Teko', sans-serif; font-size: 30px"
+                  class="d-flex flex-wrap justify-center px-15"
+                >
+                Elektrikli araçlarınız için şarj istasyonlarınızı kuruyoruz. Kurulu istasyonunuz varsa her türlü teknik destek sağlıyoruz.
+                </span>
+              </div>
+            </v-expand-transition>
+          </v-img>
+        </v-card>
+      </v-hover>
+    </v-col>
+
     <v-col
       cols="12"
       sm="12"
       md="12"
-      class="d-flex flex-wrap align-end"
-      style="padding: 0; background-image: linear-gradient(#424242, #e0e0e0)"
-      
+      id="lengthHeight"
+      class="d-flex flex-wrap align-center justify-center"
+      style="background-image: linear-gradient(#424242, #e0e0e0)"
     >
+      <h1 class="d-flex justify-center align-item" id="chartjsHeader">
+        Tutkumuz ve Deneyimimizle Başarıyı Şekillendiriyoruz
+      </h1>
+    </v-col>
+
+    <v-parallax id="parallax" src="/power.jpg">
       <v-col
         cols="12"
         sm="12"
         md="12"
-        id="lengthHeight"
-        class="d-flex flex-wrap align-center justify-center"
+        class="d-flex flex-wrap justify-space-around align-center"
+        style="padding-top: 150px; padding-bottom: 150px"
       >
-        <h1 class="d-flex justify-center align-item" id="chartjsHeader">
-          Tutkumuz ve Deneyimimizle Başarıyı Şekillendiriyoruz
-        </h1>
+        <v-col
+          cols="12"
+          sm="3"
+          md="3"
+          class="px-0 py-0 d-flex justify-center align-center"
+          style="height: 320px"
+        >
+          <canvas id="successChart"></canvas>
+        </v-col>
+        <v-col
+          cols="12"
+          sm="3"
+          md="3"
+          class="px-0 py-0 d-flex justify-center align-center"
+          style="height: 320px"
+        >
+          <canvas id="successChart2"></canvas>
+        </v-col>
+        <v-col
+          cols="12"
+          sm="3"
+          md="3"
+          class="px-0 py-0 d-flex justify-center align-center"
+          style="height: 320px"
+        >
+          <canvas id="successChart3"></canvas>
+        </v-col>
       </v-col>
-      <v-col cols="12" sm="4" md="4" class="pb-0 pl-0 pr-0">
-        <canvas id="successChart"></canvas>
-      </v-col>
-      <v-col cols="12" sm="4" md="4" class="pb-0 pl-0 pr-0">
-        <canvas id="successChart2"></canvas>
-      </v-col>
-      <v-col cols="12" sm="4" md="4" class="pb-0 pl-0 pr-0">
-        <canvas id="successChart3"></canvas>
-      </v-col>
-      
-    </v-col>
+    </v-parallax>
   </v-col>
 </template>
 <script setup>
@@ -324,12 +388,46 @@ import Chart from "chart.js/auto";
 const successChart = ref(null);
 
 onMounted(() => {
-  createChart()
+  createChart();
 });
 // function onScroll(value){
 //   console.log(value.target.scrollTop)
 // }
 
+let projectImg = [
+  {
+    img: "../bursa-fibabank/IMG_4537.PNG",
+  },
+  {
+    img: "../bursa-fibabank/IMG_4538.PNG",
+  },
+  {
+    img: "../bursa-fibabank/IMG_4539.PNG",
+  },
+  {
+    img: "../bursa-fibabank/IMG_4540.PNG",
+  },
+  {
+    img: "../bursa-fibabank/IMG_4541.PNG",
+  },
+  {
+    img: "../bursa-fibabank/IMG_4542.PNG",
+  },
+
+  { img: "../dhl-kayseri/IMG_4543.PNG" },
+  { img: "../dhl-kayseri/IMG_4544.PNG" },
+  { img: "../dhl-kayseri/IMG_4545.PNG" },
+  { img: "../dhl-kayseri/IMG_4546.PNG" },
+  { img: "../dhl-kayseri/IMG_4547.PNG" },
+  { img: "../dhl-kayseri/IMG_4548.PNG" },
+
+  { img: "../garanti-kutahya/IMG_4549.PNG" },
+  { img: "../garanti-kutahya/IMG_4550.PNG" },
+  { img: "../garanti-kutahya/IMG_4551.PNG" },
+  { img: "../garanti-kutahya/IMG_4552.PNG" },
+  { img: "../garanti-kutahya/IMG_4553.PNG" },
+  { img: "../garanti-kutahya/IMG_4554.PNG" },
+];
 
 function createChart() {
   const x = document.getElementById("successChart");
@@ -352,23 +450,38 @@ function createChart() {
             ctx = chart.ctx;
 
           ctx.restore();
-          let fontSize = (height / 150).toFixed(2);
+          let fontSize = (height / 80).toFixed(2);
           ctx.font = fontSize + "em sans-serif";
-          
+
           ctx.textBaseline = "middle";
 
           let text = "100%",
             textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2;
-          ctx.fillStyle="white";
+            textY = height / 2.3;
+          ctx.fillStyle = "white";
           ctx.fillText(text, textX, textY);
           ctx.save();
         },
       },
     ],
     options: {
-      cutout: 240,
-      radius: 120,
+      maintainAspectRatio: false, // Genişlik ve yükseklik oranının korunmasını devre dışı bırakır
+      aspectRatio: 6,
+      plugins: {
+        title: {
+          display: true,
+          text: "TUTKU",
+          font: {
+            size: 30, // Alt başlık yazı tipi boyutu,
+            weight: 1,
+          },
+          color: "white",
+          position: "bottom",
+        },
+      },
+
+      cutout: 230,
+      radius: 100,
       events: [],
     },
   });
@@ -393,23 +506,35 @@ function createChart() {
             ctx = chart.ctx;
 
           ctx.restore();
-          let fontSize = (height / 150).toFixed(2);
+          let fontSize = (height / 80).toFixed(2);
           ctx.font = fontSize + "em sans-serif";
-          
+
           ctx.textBaseline = "middle";
 
           let text = "100%",
             textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2;
-          ctx.fillStyle="white";
+            textY = height / 2.3;
+          ctx.fillStyle = "white";
           ctx.fillText(text, textX, textY);
           ctx.save();
         },
       },
     ],
     options: {
+      plugins: {
+        title: {
+          display: true,
+          text: "DENEYİM",
+          font: {
+            size: 30, // Alt başlık yazı tipi boyutu,
+            weight: 1,
+          },
+          color: "white",
+          position: "bottom",
+        },
+      },
       cutout: 240,
-      radius: 120,
+      radius: 100,
       events: [],
     },
   });
@@ -434,23 +559,35 @@ function createChart() {
             ctx = chart.ctx;
 
           ctx.restore();
-          let fontSize = (height / 150).toFixed(2);
+          let fontSize = (height / 80).toFixed(2);
           ctx.font = fontSize + "em sans-serif";
-          
+
           ctx.textBaseline = "middle";
 
           let text = "100%",
             textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2;
-          ctx.fillStyle="white";
+            textY = height / 2.3;
+          ctx.fillStyle = "white";
           ctx.fillText(text, textX, textY);
           ctx.save();
         },
       },
     ],
     options: {
+      plugins: {
+        title: {
+          display: true,
+          text: "BAŞARI",
+          font: {
+            size: 30, // Alt başlık yazı tipi boyutu,
+            weight: 1,
+          },
+          color: "white",
+          position: "bottom",
+        },
+      },
       cutout: 240,
-      radius: 120,
+      radius: 100,
       events: [],
     },
   });
@@ -544,6 +681,9 @@ function createChart() {
     height: 250px;
     background-color: transparent;
   }
+  #parallax {
+    height: 1200px;
+  }
 }
 @media screen and (min-width: 600px) {
   #inovasion {
@@ -569,5 +709,21 @@ function createChart() {
     height: 400px;
     background-color: transparent;
   }
+  #hoverSet {
+    height: 600px;
+    background-color: transparent;
+  }
+  #parallax {
+    height: 600px;
+  }
+}
+
+.v-card--reveal-solar {
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  opacity: 0.9;
+  position: absolute;
+  width: 100%;
 }
 </style>
