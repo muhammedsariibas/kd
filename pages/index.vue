@@ -37,8 +37,10 @@
         <video
           class="hidden-md-and-down"
           style="width: 100%"
-          autoplay="autoplay"
+          autoplay
+          preload
           muted
+          playsinline
         >
           <source src="../videos/kd-pc.mp4" />
         </video>
@@ -48,7 +50,9 @@
             class="hidden-md-and-up"
             style="width: 100%"
             autoplay="autoplay"
+            preload
             muted
+            playsinline
           >
             <source src="../videos/kd-phone.mp4" />
           </video>
@@ -112,7 +116,7 @@
       class="d-flex flex-wrap justify-center pt-10 pb-10"
       style="padding-top: 100px"
     >
-      <v-col cols="12" sm="4" md="4">
+      <v-col cols="12" sm="3" md="3">
         <v-hover v-slot="{ isHovering, props }" open-delay="200">
           <v-card
             :elevation="isHovering ? 20 : 8"
@@ -120,7 +124,7 @@
             v-bind="props"
             style="width: 100%; border-radius: 0; height: 100%"
           >
-            <v-card-title class="d-flex justify-center pt-8"
+            <v-card-title class="d-flex justify-center pt-8 pb-8"
               ><h2
                 style="
                   font-family: 'Teko', sans-serif;
@@ -131,14 +135,23 @@
                 Şirketimiz
               </h2></v-card-title
             >
-            <v-card-text style="padding: 40px; height: 278px"
-              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea,
-              iure? Totam alias ipsam enim et neque. Repellat inventore harum
-              necessitatibus, magnam optio repellendus. Nesciunt ipsum mollitia
-              consequatur illo, magni minima?</v-card-text
-            >
+            <v-divider :thickness="3"></v-divider>
+            <v-card-text
+              style="
+                padding: 40px;
+                font-family: 'Teko', sans-serif;
+                font-size: 25px;
+                line-height: 30px;
+              "
+              class="d-flex justify-center text-center"
+              >Firmamız, 2023 yılında 3 ortak olarak kurulmuş, teknoloji,
+              mühendislik, üretim, lojistik ve hizmet sektörlerinde inşaat
+              taahhüt elektrik mekanik mimari alanında projelerin hazırlanması,
+              gerçekleştirilen projelerin takibi ve anahtar teslim projeler
+              üzerine faaliyet göstermektedir.
+            </v-card-text>
             <v-card-actions
-              style="position: absolute; bottom: 10px; left: 10px; right: 10px"
+              
               class="d-flex justify-center"
             >
               <v-btn
@@ -147,6 +160,7 @@
                   font-size: x-large;
                   color: #383e42;
                 "
+                   variant="outlined"
               >
                 DEVAM EDİN
               </v-btn></v-card-actions
@@ -154,15 +168,15 @@
           </v-card>
         </v-hover>
       </v-col>
-      <v-col cols="12" sm="4" md="4">
+      <v-col cols="12" sm="3" md="3">
         <v-hover v-slot="{ isHovering, props }" open-delay="200">
           <v-card
-            :elevation="isHovering ? 16 : 8"
+            :elevation="isHovering ? 20 : 8"
             :class="{ 'on-hover': isHovering }"
             v-bind="props"
-            style="width: 100%; border-radius: 0; height: 400px"
+            style="width: 100%; border-radius: 0; height: 100%"
           >
-            <v-card-title class="d-flex justify-center pt-8"
+            <v-card-title class="d-flex justify-center pt-8 pb-8"
               ><h2
                 style="
                   font-family: 'Teko', sans-serif;
@@ -173,71 +187,38 @@
                 Projelerimiz
               </h2></v-card-title
             >
-            <v-card-text class="d-flex flex-wrap justify-center align-center">
-              <v-col
-                ><v-carousel
-                  cycle
-                  cover
-                  hide-delimiters
-                  :show-arrows="false"
-                  color="#FFD54F"
-                >
-                  <v-carousel-item
-                    cover
-                    v-for="(i, index) in projectImg"
-                    :key="index"
-                  >
-                    <v-col
-                      class="d-flex justify-center align-center"
-                      style="padding: 0"
-                    >
-                      <div
-                        style="
-                          z-index: 1000000;
-                          position: absolute;
-                          font-family: 'Lobster', sans-serif;
-                          font-size: x-large;
-                        "
-                      >
-                        <NuxtLink class="nuxt-link" to="/projects">
-                          <v-btn
-                            variant="text"
-                            class="hidden-md-and-down"
-                            style="
-                              font-family: 'Teko', sans-serif;
-                              font-size: x-large;
-                              color: #383e42;
-                            "
-                          >
-                            DEVAM EDİN
-                          </v-btn>
-                        </NuxtLink>
-                      </div>
-                      <v-img :src="i.img" style="opacity: 0.5"></v-img>
-                    </v-col>
-                  </v-carousel-item>
-                </v-carousel> </v-col
-            ></v-card-text>
-            <v-card-actions
-              class="d-flex justify-center"
-              style="position: absolute; bottom: 10px; left: 10px; right: 10px"
-            >
+            <v-divider :thickness="3"></v-divider>
+            <v-card-text
+              style="
+                padding: 40px;
+                font-family: 'Teko', sans-serif;
+                font-size: 25px;
+                line-height: 30px;
+              "
+              class="d-flex justify-center text-center"
+              >Müşteri memnuniyetini artırmak için kullanıcı dostu yenilikler
+              üzerinde çalışıyoruz. Tasarım ve projelendirme sürecinde, konfor,
+              işlevsellik ve estetik açılardan mekanları değerlendirerek,
+              müşteri taleplerini göz önünde bulundurarak yeni mekanlar
+              oluşturuyoruz. 
+            </v-card-text>
+            <v-card-actions class="d-flex justify-center">
               <v-btn
                 to="projects"
-                class="hidden-md-and-up"
                 style="
                   font-family: 'Teko', sans-serif;
                   font-size: x-large;
                   color: #383e42;
                 "
+                variant="outlined"
               >
-                DEVAM EDin
+                DEVAM EDİN
               </v-btn></v-card-actions
             >
           </v-card>
         </v-hover>
       </v-col>
-      <v-col cols="12" sm="4" md="4">
+      <v-col cols="12" sm="3" md="3">
         <v-hover v-slot="{ isHovering, props }" open-delay="200">
           <v-card
             :elevation="isHovering ? 16 : 8"
@@ -245,7 +226,7 @@
             v-bind="props"
             style="width: 100%; border-radius: 0; height: 100%"
           >
-            <v-card-title class="d-flex justify-center pt-8"
+          <v-card-title class="d-flex justify-center pt-8 pb-8"
               ><h2
                 style="
                   font-family: 'Teko', sans-serif;
@@ -256,80 +237,104 @@
                 Alanlarımız
               </h2></v-card-title
             >
-            <v-card-text style="padding: 40px; height: 278px"
-              >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea,
-              iure? Totam alias ipsam enim et neque. Repellat inventore harum
-              necessitatibus, magnam optio repellendus. Nesciunt ipsum mollitia
-              consequatur illo, magni minima?</v-card-text
+            <v-divider :thickness="3"></v-divider>
+            <v-card-text
+              style="
+                padding: 40px;
+                font-family: 'Teko', sans-serif;
+                font-size: 25px;
+                line-height: 40px;
+              "
+              class="text-center"
             >
-            <v-card-actions
-              style="position: absolute; bottom: 10px; left: 10px; right: 10px"
-              class="d-flex justify-center"
-            >
-              <v-btn
-                style="
-                  font-family: 'Teko', sans-serif;
-                  font-size: x-large;
-                  color: #383e42;
-                "
-              >
-                DEVAM EDin
-              </v-btn></v-card-actions
-            >
+              <p >Yenilenebilir Enerji</p>
+              <p >Elektrikli Şarj İstasyonları</p>
+              <p >ATM Kurulumu</p>
+              <p >Teknik Destek</p>
+            </v-card-text>
+         
           </v-card>
         </v-hover>
       </v-col>
     </v-col>
 
-    <v-col cols="12" sm="12" md="12" class="px-0 pb-0">
-      <v-hover v-slot="{ isHovering, props }">
-        <v-card class="rounded-0" color="grey-lighten-4" v-bind="props">
-          <v-img id="hoverSet" :aspect-ratio="16 / 9" cover src="/solar.jpg">
-            <v-expand-transition style="height: 30%">
-              <div
-                v-if="isHovering"
-                class="d-flex transition-fast-in-fast-out bg-success v-card--reveal-solar flex-wrap justify-center"
-                style="height: 100%"
-              >
-                <span
-                  style="font-family: 'Teko', sans-serif; font-size: 30px"
-                  class="d-flex flex-wrap justify-center px-15"
+    <v-col class="d-flex flex-wrap px-0 pt-0 pb-1 elevation-24">
+      <v-col cols="12" sm="4" md="4" class="px-0 py-0">
+        <v-hover v-slot="{ isHovering, props }">
+          <v-card class="rounded-0" color="grey-lighten-4" v-bind="props">
+            <v-img id="hoverSet" :aspect-ratio="16 / 9" cover src="/solar.jpg">
+              <v-expand-transition style="height: 30%">
+                <div
+                  class="d-flex transition-fast-in-fast-out bg-success v-card--reveal-solar flex-wrap justify-center"
+                  style="height: 100%"
                 >
-                  Çağımızın yeni ihtiyacı olan yenilenebilir enerji (güneş ,
-                  rüzgar enerji sistemleri) konusunda uzman ekibimiz ve
-                  tecrübelerimizle sizlere teknik destek olabiliyor, dilerseniz
-                  ürünleriniz hakkında danışmanlık verebiliyoruz.
-                </span>
-              </div>
-            </v-expand-transition>
-          </v-img>
-        </v-card>
-      </v-hover>
-    </v-col>
+                  <span
+                    class="d-flex flex-wrap justify-center px-10 hoverFontSize"
+                  >
+                    Çağımızın yeni ihtiyacı olan yenilenebilir enerji (güneş ,
+                    rüzgar enerji sistemleri) konusunda uzman ekibimiz ve
+                    tecrübelerimizle sizlere teknik destek olabiliyor,
+                    dilerseniz ürünleriniz hakkında danışmanlık verebiliyoruz.
+                  </span>
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-card>
+        </v-hover>
+      </v-col>
 
-    <v-col cols="12" sm="12" md="12" class="px-0 py-0">
-      <v-hover v-slot="{ isHovering, props }">
-        <v-card class="rounded-0" color="grey-lighten-4" v-bind="props">
-          <v-img id="hoverSet" :aspect-ratio="16 / 9" cover src="/solar.jpg">
-            <v-expand-transition style="height: 30%">
-              <div
-                v-if="isHovering"
-                class="d-flex transition-fast-in-fast-out bg-orange-darken-2 v-card--reveal-solar flex-wrap justify-center"
-                style="height: 100%"
-              >
-                <span
-                  style="font-family: 'Teko', sans-serif; font-size: 30px"
-                  class="d-flex flex-wrap justify-center px-15"
+      <v-col cols="12" sm="4" md="4" class="px-2 py-0">
+        <v-hover v-slot="{ isHovering, props }">
+          <v-card class="rounded-0" color="grey-lighten-4" v-bind="props">
+            <v-img
+              id="hoverSet"
+              :aspect-ratio="16 / 9"
+              cover
+              src="/chargeStation.jpg"
+            >
+              <v-expand-transition style="height: 30%">
+                <div
+                  class="d-flex transition-fast-in-fast-out bg-orange-darken-2 v-card--reveal-solar flex-wrap justify-center"
+                  style="height: 100%"
                 >
-                Elektrikli araçlarınız için şarj istasyonlarınızı kuruyoruz. Kurulu istasyonunuz varsa her türlü teknik destek sağlıyoruz.
-                </span>
-              </div>
-            </v-expand-transition>
-          </v-img>
-        </v-card>
-      </v-hover>
-    </v-col>
+                  <span
+                    class="d-flex flex-wrap justify-center px-10 hoverFontSize"
+                  >
+                    Elektrikli araçlarınız için şarj istasyonlarınızı kuruyoruz.
+                    Kurulu istasyonunuz varsa her türlü teknik destek
+                    sağlıyoruz.
+                  </span>
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-card>
+        </v-hover>
+      </v-col>
 
+      <v-col cols="12" sm="4" md="4" class="px-0 py-0">
+        <v-hover v-slot="{ isHovering, props }">
+          <v-card class="rounded-0" color="grey-lighten-4" v-bind="props">
+            <v-img id="hoverSet" :aspect-ratio="16 / 9" cover src="/atm.jpg">
+              <v-expand-transition style="height: 30%">
+                <div
+                  class="d-flex transition-fast-in-fast-out bg-teal-darken-1 v-card--reveal-solar flex-wrap justify-center"
+                  style="height: 100%"
+                >
+                  <span
+                    class="d-flex flex-wrap justify-center px-10 hoverFontSize hidden-md-and-up"
+                  >
+                    ATM altyapı hazırlanması, bakım ve onarım işleri için
+                    Türkiye'nin her noktasına arızaya anında müdahale ederek,
+                    sorunu en kısa sürede giderilmesi için ekiplerimizi
+                    yönlendiriyoruz. 
+                  </span>
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-card>
+        </v-hover>
+      </v-col>
+    </v-col>
     <v-col
       cols="12"
       sm="12"
@@ -380,6 +385,20 @@
         </v-col>
       </v-col>
     </v-parallax>
+  </v-col>
+  <v-col
+    cols="12"
+    sm="12"
+    md="12"
+    class="px-0 py-0 d-flex flex-wrap justify-center"
+  >
+    <v-icon size="150" class="py-0">
+      <v-img
+        style="background-color: transparent"
+        cover
+        src="../logos/kdpng.png"
+      ></v-img>
+    </v-icon>
   </v-col>
 </template>
 <script setup>
@@ -684,6 +703,14 @@ function createChart() {
   #parallax {
     height: 1200px;
   }
+  .hoverFontSize {
+    font-family: "Teko", sans-serif;
+    font-size: 18px;
+  }
+  #hoverSet {
+    height: 500px;
+    background-color: transparent;
+  }
 }
 @media screen and (min-width: 600px) {
   #inovasion {
@@ -710,11 +737,15 @@ function createChart() {
     background-color: transparent;
   }
   #hoverSet {
-    height: 600px;
+    height: 500px;
     background-color: transparent;
   }
   #parallax {
     height: 600px;
+  }
+  .hoverFontSize {
+    font-family: "Teko", sans-serif;
+    font-size: 20px;
   }
 }
 
